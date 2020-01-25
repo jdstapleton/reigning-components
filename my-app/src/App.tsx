@@ -11,6 +11,9 @@ const App: React.FC = () => {
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
+                <TextareaList presetValues={['jds']}
+                              maxRows={6}
+                              onCommit={committedItems => console.log('committedItems', committedItems)}/>
                 <a
                     className="App-link"
                     href="https://reactjs.org"
