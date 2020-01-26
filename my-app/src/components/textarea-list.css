@@ -1,0 +1,52 @@
+/**********************************************
+ **** Textarea-List                        ****
+ **********************************************/
+.textarea-list:focus-within {
+    border: 2px solid rgb(86, 180, 239);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgba(82, 168, 236, 0.6);
+}
+
+.textarea-list {
+    display: flex;
+    align-items: center;
+
+    font-family: Arial,sans-serif;
+
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.075);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.075);
+    padding: 4px 0 4px 4px;
+    margin: 0;
+    outline: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+    font-size: 13px;
+    line-height: 20px;
+}
+
+
+
+.textarea-list .textarea-list-text {
+    background-color: transparent;
+
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+}
+
+.textarea-list .commit-button {
+    background-color: steelblue;
+    text-align: center;
+    display: none;
+}
+
+.textarea-list .commit-button.show {
+    display: initial;
+}

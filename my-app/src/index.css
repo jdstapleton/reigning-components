@@ -11,24 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/**********************************************
- **** Textarea-List                        ****
- **********************************************/
-.textarea-list {
-  border: thin solid black;
-}
-
-.textarea-list-text {
-  background-color: transparent;
-}
-
-
-.commit-button {
-  color: steelblue;
-  display: none;
-}
-
-.commit-button.show {
-  display: initial;
-}
