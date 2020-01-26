@@ -54,7 +54,6 @@ export function TextareaList(props: TextareaListProps) {
     function resizeTextArea(ta: HTMLTextAreaElement) {
         const descriptor = fetchTextareaDescriptor(ta);
         ta.style.maxHeight = (props.maxRows && `${props.maxRows * descriptor.lineHeight}px`) || 'initial';
-        //ta.style.height = `${pendingValueString && pendingValueString.split('\n').length * descriptor.lineHeight}px`;
         ta.style.height = '0';
         ta.style.height = `${ta.scrollHeight}px`;
     }
