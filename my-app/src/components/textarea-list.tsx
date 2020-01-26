@@ -1,4 +1,4 @@
-import React, {useState, SyntheticEvent, useEffect, createRef} from 'react';
+import React, {useState, SyntheticEvent, useEffect, createRef, ChangeEvent} from 'react';
 import classNames from 'classnames';
 import {useDebouncedCallback} from "use-debounce";
 import getLineHeight from 'line-height';
@@ -59,6 +59,11 @@ export function TextareaList(props: TextareaListProps) {
         ta.style.height = `${ta.scrollHeight}px`;
     }
 
+    function onChangeHandler(e: ChangeEvent<HTMLTextAreaElement>) {
+        setPendingValueString(e.currentTarget.value);
+        debouncedEventResizer(e);
+    }
+
     function commitHandler() {
         const toCommit = pendingValueString.split('\n');
         if (props.onCommit) {
@@ -74,10 +79,7 @@ export function TextareaList(props: TextareaListProps) {
             className="textarea-list-text"
             value={pendingValueString}
             onKeyDown={debouncedEventResizer}
-            onChange={e => {
-                setPendingValueString(e.currentTarget.value);
-                debouncedEventResizer(e);
-            }}
+            onChange={onChangeHandler}
         />
         <button className={classNames('commit-button', showIfNonEmpty(pendingValueString))}
                 onClick={commitHandler}>Add
